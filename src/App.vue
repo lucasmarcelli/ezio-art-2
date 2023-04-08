@@ -3,7 +3,7 @@
     <PageSidebar />
 
     <PageContent>
-      <FlipBook />
+      <ArtBook />
     </PageContent>
   </div>
 </template>
@@ -11,14 +11,15 @@
 <script>
 import PageSidebar from './components/PageSidebar'
 import PageContent from './components/PageContent'
-import FlipBook from './components/FlipBook'
+import ArtBook from './components/ArtBook'
 
 export default {
   name: 'App',
+
   components: {
     PageSidebar,
     PageContent,
-    FlipBook
+    ArtBook
   }
 }
 </script>
@@ -31,5 +32,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
 }
 </style>

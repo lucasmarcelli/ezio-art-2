@@ -15,9 +15,9 @@ export default {
   display: flex;
   justify-content: flex-end;
   width: 65%;
-  // @include tablet {
-  //   width: 100%;
-  // }
+  @include tablet {
+    width: 100%;
+  }
 }
 
 </style>
