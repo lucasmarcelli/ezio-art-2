@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PageSidebar />
+
+    <PageContent>
+      <FlipBook />
+    </PageContent>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PageSidebar from './components/PageSidebar'
+import PageContent from './components/PageContent'
+import FlipBook from './components/FlipBook'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PageSidebar,
+    PageContent,
+    FlipBook
   }
 }
 </script>

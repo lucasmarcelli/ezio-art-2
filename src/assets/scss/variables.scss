@@ -1,0 +1,33 @@
+// Colours
+$light: #F7F7F7;
+$dark : #26151A;
+
+$ribbon-green-dark: #106200;
+$ribbon-green-light: #92AE2D;
+
+@mixin green-ribbon-gradient {
+  background-image: linear-gradient(45deg, $ribbon-green-dark, $yellow, $ribbon-green-dark, $yellow);
+}
+
+$red: #D9042B;
+$red-dark: #730217;
+$purple: #8C2A58;
+$purple-dark: #591B38;
+$blue: #03A6A6;
+$blue-dark: #025959;
+$green: #7FA62D;
+$green-dark: #455918;
+$yellow: #D98E04;
+$yellow-dark: #A66D03;
+
+// Breakpoints
+$mobile: 415px;
+$tablet: 850px;
+$browser: 1024px;
+$browserLarge: 1360px;
+
+@mixin mobile { @media screen and (max-width: $mobile) { @content; } }
+@mixin tablet { @media screen and (max-width: $tablet) { @content; } }
+@mixin browser { @media screen and (max-width: $browser) { @content; } }
+@mixin browserLarge { @media screen and (max-width: $browserLarge) { @content; } }
+
