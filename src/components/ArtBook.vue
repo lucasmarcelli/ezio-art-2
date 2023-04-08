@@ -168,7 +168,7 @@ export default {
 <style lang="scss" scoped>
 .art-book {
   width: 95%;
-  height: 95vh;
+  height: 90vh;
 }
 
 .flipbook {
