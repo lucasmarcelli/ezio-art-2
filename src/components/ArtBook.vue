@@ -4,12 +4,28 @@
       class="flipbook"
       :pages="pages"
       :zooms="[1]"
+      :startPage="pageNum"
+      v-slot="flipbook"
       ref="flipbook"
-      @flip-left-start="onFlipLeftStart"
       @flip-left-end="onFlipLeftEnd"
-      @flip-right-start="onFlipRightStart"
       @flip-right-end="onFlipRightEnd">
-
+      <div class="flipbook-controls">
+        <div
+          v-if="flipbook.page > 1"
+          class="nav-control previous"
+          @click="flipbook.flipLeft">
+          ←
+        </div>
+        <h4 class="text">
+          Page {{flipbook.page}} of {{flipbook.numPages}}
+        </h4>
+        <div
+          v-if="flipbook.page < flipbook.numPages"
+          class="nav-control next"
+          @click="flipbook.flipRight">
+          →
+        </div>
+      </div>
     </FlipBook>
   </div>
 </template>
@@ -114,44 +130,76 @@ export default {
         'flipbook-pages/84.jpeg',
         'flipbook-pages/85.jpeg',
         'flipbook-pages/86.jpeg'
-      ]
+      ],
+      pageNum: null
     }
   },
 
   methods: {
-    onFlipLeftStart(page) { console.log('flip-left-start', page) },
     onFlipLeftEnd(page) {
-      console.log('flip-left-end', page)
-      // window.location.hash = '#' + page
+      window.location.hash = '#' + page
     },
-    onFlipRightStart(page) { console.log('flip-right-start', page) },
     onFlipRightEnd(page) {
-      console.log('flip-right-end', page)
-      // window.location.hash = '#' + page
-    },
-    onZoomStart(zoom) {
-      console.log('zoom-start', zoom)
-    },
-    onZoomEnd(zoom) {
-      console.log('zoom-end', zoom)
+      window.location.hash = '#' + page
     },
     setPageFromHash() {
       const n = parseInt(window.location.hash.slice(1), 10)
       if (isFinite(n)) this.pageNum = n
-    },
+    }
   },
+
+  mounted() {
+    window.addEventListener('keydown', (e) => {
+      const flipbook = this.$refs.flipbook
+      if (!flipbook) return
+      if ((e.key === 'ArrowLeft' || e.keyCode === 37) && flipbook.canFlipLeft) {
+        flipbook.flipLeft()
+      }
+      if ((e.key === 'ArrowRight' || e.keyCode === 39) && flipbook.canFlipRight) {
+        flipbook.flipRight()
+      }
+    })
+    window.addEventListener('hashchange', this.setPageFromHash)
+    this.setPageFromHash()
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .art-book {
   width: 95%;
-  height: 90vh;
+  height: 95vh;
 }
 
 .flipbook {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-flow: column-reverse;
+}
+
+.flipbook-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .text {
+    // position: absolute;
+  }
+}
+
+.nav-control {
+  font-size: toRem(18);
+  height: toRem(20);
+  width: toRem(20);
+  margin: 0 1rem;
+  border-radius: 50%;
+  transition: 100ms ease-in;
+  &:hover {
+    background-color: $yellow;
+  }
+  &:active {
+    background-color: $green;
+  }
 }
 
 </style>

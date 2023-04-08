@@ -1,3 +1,4 @@
+@use 'sass:math';
 // Colours
 $light: #F7F7F7;
 $dark : #26151A;
@@ -8,6 +9,12 @@ $ribbon-green-light: #92AE2D;
 @mixin green-ribbon-gradient {
   background-image: linear-gradient(45deg, $ribbon-green-dark, $yellow, $ribbon-green-dark, $yellow);
 }
+
+// ---------------------------------------------------------------- Calculations
+@function toRem($value) {
+  @return math.div($value, 16) + rem;
+}
+
 
 $red: #D9042B;
 $red-dark: #730217;
