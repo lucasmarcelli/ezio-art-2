@@ -157,7 +157,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 .ribbon {
    position: absolute;
@@ -165,6 +165,14 @@ export default {
    /* width: 100%; */
    top: 0;
    left: .5rem;
+   @include tablet {
+      top: -2rem;
+      left: -1.5rem;
+      height: calc(100% + 10rem);
+   }
+   @include mobile {
+      display: none;
+   }
 }
 
 </style>

@@ -5,6 +5,7 @@
       :pages="pages"
       :zooms="[1]"
       :startPage="pageNum"
+      :singlePage="false"
       v-slot="flipbook"
       ref="flipbook"
       @flip-left-end="onFlipLeftEnd"
@@ -208,6 +209,11 @@ export default {
     color: white;
     background-color: $green;
     box-shadow: inset -3px -4px 4px #CCFD7C, inset 3px 4px 4px #9AD933;
+  }
+  @include mobile {
+    color: white;
+    background-color: $blue;
+    box-shadow: inset -3px -4px 4px #ccfcfa, inset 3px 4px 4px #9ad9cf;
   }
 }
 

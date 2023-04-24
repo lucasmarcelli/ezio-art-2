@@ -16,12 +16,21 @@
         </div>
       </div>
     </div>
+
+<BackgroundRibbon />
+
   </div>
 </template>
 
 <script>
+import BackgroundRibbon from './BackgroundRibbon'
+
 export default {
-  name: 'PageSidebar'
+  name: 'PageSidebar',
+
+  components: {
+    BackgroundRibbon
+  }
 }
 </script>
 
@@ -33,20 +42,37 @@ export default {
   justify-content: flex-start;
   width: 35%;
   @include tablet {
+    position: relative;
     width: 100%;
-    margin-bottom: 10rem;
+    margin-bottom: 9rem;
+    padding-left: 4rem;
+  }
+  @include mobile {
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+
+.sidebar-container {
+  z-index: 10;
+  @include mobile {
+    padding: 0 1rem;
   }
 }
 
 .sidebar-title {
-  font-family: 'Unbounded';
-  font-weight: 400;
-  font-size: 3.5rem;
+  @include siteTitle;
+  @include mobile {
+    display: none;
+  }
 }
 
 .sidebar-content {
   @include tablet {
     margin-right: 8rem;
+  }
+  @include mobile {
+    margin-right: 0;
   }
 }
 
@@ -65,23 +91,5 @@ export default {
 .contact {
   font-size: 1rem;
 }
-
-// .background {
-//   height: 100%;
-//   width: 100%;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   .ribbon {
-//     position: relative;
-//     height: 100%;
-//     width: 35%;
-//     background: url(@/assets/ribbon.svg)0 0/ 100% 100% no-repeat ;
-//     @include tablet {
-//       transform: rotate(-90deg);
-//       width: 85%;
-//     }
-//   }
-// }
 
 </style>

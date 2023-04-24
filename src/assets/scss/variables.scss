@@ -14,7 +14,6 @@ $ribbon-green-light: #92AE2D;
   @return math.div($value, 16) + rem;
 }
 
-
 $red: #D9042B;
 $red-dark: #730217;
 $purple: #8C2A58;
@@ -36,3 +35,9 @@ $browserLarge: 1360px;
 @mixin browser { @media screen and (max-width: $browser) { @content; } }
 @mixin browserLarge { @media screen and (max-width: $browserLarge) { @content; } }
 
+@mixin siteTitle {
+  font-family: 'Unbounded';
+  font-weight: 400;
+  font-size: 3.5rem;
+  font-size: clamp(3rem, 1vh, 4rem);
+}

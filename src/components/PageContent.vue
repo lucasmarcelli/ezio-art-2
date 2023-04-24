@@ -18,6 +18,10 @@ export default {
   @include tablet {
     width: 100%;
   }
+  @include mobile {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
 }
 
 </style>
