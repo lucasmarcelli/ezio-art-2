@@ -1,4 +1,11 @@
-@import 'variables';
+@import '@/assets/scss/variables.scss';
+
+@font-face {
+  font-family: 'Lustria';
+  src: url(@/assets/fonts/Lustria-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
 html, body {
   background-color: $light;
@@ -12,37 +19,3 @@ html, body {
   height: 100vh;
 }
 
-.main-container {
-  height: 100%;
-}
-
-.background {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  .ribbon1 {
-    position: relative;
-    height: 100%;
-    width: 35%;
-    background: url(@/assets/ribbon1.svg)0 0/ 100% 100% no-repeat ;
-    @include tablet {
-      transform: rotate(-90deg);
-      width: 85%;
-  }
-  }
-}
-
-.site-content {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  position: relative;
-  z-index: 1;
-  padding: 2rem 4rem 1rem 8rem;
-  @include tablet {
-    flex-direction: column;
-    padding: 2rem 3rem 2rem 1.5rem;
-  }
-}

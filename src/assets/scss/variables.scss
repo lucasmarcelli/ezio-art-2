@@ -1,5 +1,5 @@
 @use 'sass:math';
-// Colours
+
 $light: #F7F7F7;
 $dark : #26151A;
 
@@ -10,7 +10,6 @@ $ribbon-green-light: #92AE2D;
   background-image: linear-gradient(45deg, $ribbon-green-dark, $yellow, $ribbon-green-dark, $yellow);
 }
 
-// ---------------------------------------------------------------- Calculations
 @function toRem($value) {
   @return math.div($value, 16) + rem;
 }
@@ -27,7 +26,6 @@ $green-dark: #455918;
 $yellow: #D98E04;
 $yellow-dark: #A66D03;
 
-// Breakpoints
 $mobile: 415px;
 $tablet: 850px;
 $browser: 1024px;

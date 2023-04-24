@@ -1,6 +1,9 @@
 <template>
   <div class="sidebar">
-    <h1 class="sidebar-title">ezio marcelli</h1>
+
+    <div class="sidebar-container">
+      <h1 class="sidebar-title">ezio marcelli</h1>
+
       <div class="sidebar-content">
         <img class="ezio-img" src="@/assets/cartoon-face.jpg" alt="this is his face"/>
         <p class="bio">
@@ -12,6 +15,7 @@
           </p>
         </div>
       </div>
+    </div>
   </div>
 </template>
 
@@ -26,7 +30,7 @@ export default {
 .sidebar {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: flex-start;
   width: 35%;
   @include tablet {
     width: 100%;
@@ -61,5 +65,23 @@ export default {
 .contact {
   font-size: 1rem;
 }
+
+// .background {
+//   height: 100%;
+//   width: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   .ribbon {
+//     position: relative;
+//     height: 100%;
+//     width: 35%;
+//     background: url(@/assets/ribbon.svg)0 0/ 100% 100% no-repeat ;
+//     @include tablet {
+//       transform: rotate(-90deg);
+//       width: 85%;
+//     }
+//   }
+// }
 
 </style>

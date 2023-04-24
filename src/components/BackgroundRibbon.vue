@@ -1,4 +1,5 @@
-<svg class="ribbon1" viewBox="0 0 95 169" xmlns="http://www.w3.org/2000/svg">
+<template>
+  <svg class="ribbon" viewBox="0 0 95 169" xmlns="http://www.w3.org/2000/svg">
    <defs>
       <linearGradient id="middle-blue"
          gradientUnits="userSpaceOnUse"
@@ -147,3 +148,23 @@
       style="display:inline;fill:url(#top-green);fill-opacity:1"
       d="M 9.477649,51.41585 C 8.0705253,46.873054 6.9451118,45.406247 6.6027836,42.209645 5.56957,32.561673 4.1665756,21.512305 9.1990993,13.216246 13.387188,6.3122284 29.599805,0.15251306 29.599805,0.15251306 l -5.43456,0.026077 c 0,0 -13.58839,5.96109664 -17.0592535,11.98084994 C 2.0881986,20.862138 2.4307798,32.344949 4.4718537,42.181067 5.1832705,45.609448 9.477649,51.41585 9.477649,51.41585 Z"/>
 </svg>
+
+</template>
+
+<script>
+export default {
+  name: 'BackgroundRibbon'
+}
+</script>
+
+<style>
+
+.ribbon {
+   position: absolute;
+   height: 100%;
+   /* width: 100%; */
+   top: 0;
+   left: .5rem;
+}
+
+</style>

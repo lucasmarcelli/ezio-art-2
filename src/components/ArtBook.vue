@@ -192,6 +192,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   font-size: toRem(18);
   height: toRem(45);
   width: toRem(45);
