@@ -14,7 +14,7 @@
           v-if="flipbook.page > 1"
           class="nav-control previous"
           @click="flipbook.flipLeft">
-          ←
+          <span>←</span>
         </div>
         <h4 class="text">
           Page {{flipbook.page}} of {{flipbook.numPages}}
@@ -23,7 +23,7 @@
           v-if="flipbook.page < flipbook.numPages"
           class="nav-control next"
           @click="flipbook.flipRight">
-          →
+          <span>→</span>
         </div>
       </div>
     </FlipBook>
@@ -176,29 +176,37 @@ export default {
   height: 100%;
   display: flex;
   flex-flow: column-reverse;
+  :deep(.bounding-box) {
+    box-shadow: 4px 4px 11px 5px rgba(0,0,0,0.25);
+  }
 }
+
 
 .flipbook-controls {
   display: flex;
   align-items: center;
   justify-content: center;
-  .text {
-    // position: absolute;
-  }
 }
 
 .nav-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: toRem(18);
-  height: toRem(20);
-  width: toRem(20);
+  height: toRem(45);
+  width: toRem(45);
   margin: 0 1rem;
   border-radius: 50%;
   transition: 100ms ease-in;
   &:hover {
-    background-color: $yellow;
+    color: white;
+    background-color: $blue;
+    box-shadow: inset -3px -4px 4px #ccfcfa, inset 3px 4px 4px #9ad9cf;
   }
   &:active {
+    color: white;
     background-color: $green;
+    box-shadow: inset -3px -4px 4px #CCFD7C, inset 3px 4px 4px #9AD933;
   }
 }
 
