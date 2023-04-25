@@ -10,15 +10,21 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### To build for production
+
+Ensure that the `publicPath` in vue.config.js is set to the repo name
+
+build the static site:
 ```
 npm run build
 ```
 
-### Lints and fixes files
+commit it:
 ```
-npm run lint
+git add dist && git commit -m 'adding dist subtree'
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+push only the dist folder to the gh-pages branch, which will trigger a redeploy of the site:
+```
+git subtree push --prefix dist origin gh-pages
+```
