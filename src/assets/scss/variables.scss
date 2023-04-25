@@ -25,14 +25,16 @@ $green-dark: #455918;
 $yellow: #D98E04;
 $yellow-dark: #A66D03;
 
-$mobile: 415px;
+$mini: 415px;
+$mobile: 640px;
 $tablet: 850px;
 $browser: 1024px;
+$browserMed: 1250px;
 $browserLarge: 1360px;
-
 @mixin mobile { @media screen and (max-width: $mobile) { @content; } }
 @mixin tablet { @media screen and (max-width: $tablet) { @content; } }
 @mixin browser { @media screen and (max-width: $browser) { @content; } }
+@mixin browserMed { @media screen and (max-width: $browserMed) { @content; } }
 @mixin browserLarge { @media screen and (max-width: $browserLarge) { @content; } }
 
 @mixin siteTitle {

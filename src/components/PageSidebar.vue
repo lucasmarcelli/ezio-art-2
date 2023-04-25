@@ -17,7 +17,7 @@
       </div>
     </div>
 
-<BackgroundRibbon />
+    <BackgroundRibbon />
 
   </div>
 </template>
@@ -44,32 +44,39 @@ export default {
   @include tablet {
     position: relative;
     width: 100%;
-    margin-bottom: 9rem;
-    padding-left: 4rem;
   }
   @include mobile {
     padding: 0;
-    margin-bottom: 0;
   }
 }
 
 .sidebar-container {
   z-index: 10;
+  @include tablet {
+    padding: 1rem 1rem 0 3rem;
+  }
   @include mobile {
     padding: 0 1rem;
   }
 }
 
 .sidebar-title {
+  margin: 2rem 0;
   @include siteTitle;
-  @include mobile {
+  @include browserLarge {
+    margin: 3rem 0;
+  }
+  @include browserMed {
+    margin: 2rem 0;
+  }
+  @include tablet {
     display: none;
   }
 }
 
 .sidebar-content {
   @include tablet {
-    margin-right: 8rem;
+    // margin-right: 8rem;
   }
   @include mobile {
     margin-right: 0;
@@ -86,6 +93,15 @@ export default {
 .bio {
   font-size: clamp(1.2rem, 1.4vw, 1.3rem);
   margin: 0;
+  @include browserMed {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+  }
+  @include browser {
+    font-size: clamp(1rem, 1.4vw, 1.3rem)
+  }
+  @include tablet {
+    font-size: 1.2rem;
+  }
 }
 
 .contact {

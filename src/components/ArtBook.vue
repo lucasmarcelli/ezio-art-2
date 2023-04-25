@@ -170,6 +170,9 @@ export default {
 .art-book {
   width: 95%;
   height: 90vh;
+  @include browser {
+    height: 75vh;
+  }
 }
 
 .flipbook {
@@ -187,6 +190,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  @include browserLarge {
+    padding: 2rem 0;
+  }
+  @include mobile {
+    padding: 0;
+    padding-top: 1rem;
+  }
 }
 
 .nav-control {
@@ -200,6 +210,9 @@ export default {
   margin: 0 1rem;
   border-radius: 50%;
   transition: 100ms ease-in;
+  color: white;
+    background-color: $yellow;
+    box-shadow: inset -3px -4px 4px #fcf3cc, inset 3px 4px 4px #d9cb9a;
   &:hover {
     color: white;
     background-color: $blue;
@@ -210,11 +223,8 @@ export default {
     background-color: $green;
     box-shadow: inset -3px -4px 4px #CCFD7C, inset 3px 4px 4px #9AD933;
   }
-  @include mobile {
-    color: white;
-    background-color: $blue;
-    box-shadow: inset -3px -4px 4px #ccfcfa, inset 3px 4px 4px #9ad9cf;
-  }
+
+
 }
 
 </style>

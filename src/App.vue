@@ -37,9 +37,16 @@ export default {
 @import url(@/assets/scss/index.scss);
 
 #app {
+  position: relative;
   padding: 2.5rem 3rem 0 7rem;
   display: flex;
-  height: calc(100vh - 3rem);
+  height: calc(100vh - 2.5rem);
+  @include browserLarge {
+    padding-left: 9rem;
+  }
+  @include browser {
+    padding-left: 3rem;
+  }
   @include tablet {
     padding: 2rem;
     height: 100%;
@@ -55,9 +62,10 @@ export default {
 
 .title {
   display: none;
-  @include mobile {
+  @include tablet {
     display: block;
     @include siteTitle;
+    text-align: center;
   }
 }
 

@@ -162,13 +162,17 @@ export default {
 .ribbon {
    position: absolute;
    height: 100%;
-   /* width: 100%; */
    top: 0;
    left: .5rem;
+   @include browser {
+      display: none;
+   }
    @include tablet {
-      top: -2rem;
+      top: unset;
+      bottom: -4rem;
       left: -1.5rem;
       height: calc(100% + 10rem);
+      transform: scaleX(-1) rotate(180deg);
    }
    @include mobile {
       display: none;

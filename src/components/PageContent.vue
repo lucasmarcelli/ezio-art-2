@@ -14,7 +14,9 @@ export default {
 .page-content {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   width: 65%;
+  position: relative;
   @include tablet {
     width: 100%;
   }
