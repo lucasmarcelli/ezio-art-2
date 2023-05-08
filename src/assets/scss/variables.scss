@@ -14,6 +14,10 @@ $ribbon-green-light: #92AE2D;
   @return math.div($value, 16) + rem;
 }
 
+@function vw($px-vw, $base-vw: 850px) {
+  @return math.div($px-vw * 100vw, $base-vw);
+}
+
 $red: #D9042B;
 $red-dark: #730217;
 $purple: #8C2A58;
@@ -39,7 +43,6 @@ $browserLarge: 1360px;
 
 @mixin siteTitle {
   font-family: 'Unbounded';
-  font-weight: 400;
   font-size: 3.5rem;
   font-size: clamp(3rem, 1vh, 4rem);
 }

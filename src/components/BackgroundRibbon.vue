@@ -161,18 +161,20 @@ export default {
 
 .ribbon {
    position: absolute;
-   height: 100%;
+   width: toRem(480);
    top: 0;
    left: .5rem;
    @include browser {
       display: none;
    }
    @include tablet {
+      display: block;
       top: unset;
-      bottom: -4rem;
-      left: -1.5rem;
-      height: calc(100% + 10rem);
-      transform: scaleX(-1) rotate(180deg);
+      transform-origin: bottom left;
+      left: 0;
+      bottom: 0;
+      height: 100vw;
+      transform: rotate(-90deg) translateY(calc(100% - 3rem)) translateX(max(toRem(-80), calc(-100px + 6vw)));
    }
    @include mobile {
       display: none;

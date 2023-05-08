@@ -38,12 +38,9 @@ export default {
 
 #app {
   position: relative;
-  padding: 2.5rem 3rem 0 7rem;
+  padding: 2.5rem 3rem 0 9rem;
   display: flex;
   height: calc(100vh - 2.5rem);
-  @include browserLarge {
-    padding-left: 9rem;
-  }
   @include browser {
     padding-left: 3rem;
   }

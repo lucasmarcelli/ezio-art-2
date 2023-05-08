@@ -53,7 +53,7 @@ export default {
 .sidebar-container {
   z-index: 10;
   @include tablet {
-    padding: 1rem 1rem 0 3rem;
+    padding: 1rem 9rem 3rem 1rem;
   }
   @include mobile {
     padding: 0 1rem;
@@ -76,7 +76,6 @@ export default {
 
 .sidebar-content {
   @include tablet {
-    // margin-right: 8rem;
   }
   @include mobile {
     margin-right: 0;
@@ -94,10 +93,7 @@ export default {
   font-size: clamp(1.2rem, 1.4vw, 1.3rem);
   margin: 0;
   @include browserMed {
-    font-size: clamp(1rem, 1.5vw, 1.3rem);
-  }
-  @include browser {
-    font-size: clamp(1rem, 1.4vw, 1.3rem)
+    font-size: clamp(1rem, 1.4vw, 1.3rem);
   }
   @include tablet {
     font-size: 1.2rem;
