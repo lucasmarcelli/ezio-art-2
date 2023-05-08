@@ -24,9 +24,9 @@ commit it:
 git add dist && git commit -m '<commit message>'
 ```
 
-push only the dist folder to the `gh-pages` branch which should be the deafault branch:
+push only the dist folder to `gh-pages`:
 ```
 git subtree push --prefix dist origin gh-pages
 ```
 
-if the push to `gh-pages` doesn't trigger the workflow in the _Actions_ tab run the workflow manually
+this should trigger the redeploy but if `gh-pages` isn't the default branch it won't so you can run the workflow manually from the _Actions_ tab
