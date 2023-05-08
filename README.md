@@ -27,6 +27,6 @@ git add dist && git commit -m '<commit message>'
 push only the dist folder to the `gh-pages` branch which should be the deafault branch:
 ```
 git subtree push --prefix dist origin gh-pages
-
 ```
+
 if the push to `gh-pages` doesn't trigger the workflow in the _Actions_ tab run the workflow manually
