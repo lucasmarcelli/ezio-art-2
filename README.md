@@ -21,10 +21,13 @@ npm run build
 
 commit it:
 ```
-git add dist && git commit -m 'adding dist subtree'
+git add dist && git commit -m '<commit message>'
 ```
 
-push only the dist folder to the gh-pages branch, which will trigger a redeploy of the site:
+push only the dist folder to the gh-pages branch:
 ```
 git subtree push --prefix dist origin gh-pages
+
 ```
+
+in repo _Actions_ tab run 'Deploy static content to Pages' workflow
