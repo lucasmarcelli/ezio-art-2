@@ -4,7 +4,8 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["gh-pages"]
+    branches:
+      - 'main'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,7 +23,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -37,7 +38,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: '.'
+          path: '/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
