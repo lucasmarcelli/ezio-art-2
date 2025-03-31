@@ -19,4 +19,4 @@ on `main` build the static site:
 npm run build
 ```
 
-commit and push the built site to github, this should trigger redeploying the site to github pages. The workflow can also be run manually from the _Actions_ tab
+Commit and push the built site to github, it should automatically build into `./dist` which will trigger redeploying the site to github pages. The workflow can also be run manually from the _Actions_ tab
