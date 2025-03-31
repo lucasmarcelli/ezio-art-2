@@ -14,7 +14,7 @@
         <div
           v-if="flipbook.page > 1"
           class="nav-control previous"
-          @click="flipbook.flipLeft">
+          @click="pageFlip(flipbook.flipLeft)">
           <span>←</span>
         </div>
         <h4 class="text">
@@ -23,7 +23,7 @@
         <div
           v-if="flipbook.page < flipbook.numPages"
           class="nav-control next"
-          @click="flipbook.flipRight">
+          @click="pageFlip(flipbook.flipRight)">
           <span>→</span>
         </div>
       </div>
@@ -58,13 +58,13 @@ export default {
         'flipbook-pages/11.jpeg',
         'flipbook-pages/12.jpeg',
         'flipbook-pages/13.jpeg',
-        'flipbook-pages/14.jpeg',
+        // 'flipbook-pages/14.jpeg',
         'flipbook-pages/15.jpeg',
         'flipbook-pages/16.jpeg',
         'flipbook-pages/17.jpeg',
         'flipbook-pages/18.jpeg',
         'flipbook-pages/19.jpeg',
-        'flipbook-pages/20.jpeg',
+        // 'flipbook-pages/20.jpeg',
         // 'flipbook-pages/21.jpeg',
         'flipbook-pages/22.jpeg',
         'flipbook-pages/23.jpeg',
@@ -128,24 +128,33 @@ export default {
         'flipbook-pages/81.jpeg',
         'flipbook-pages/82.jpeg',
         'flipbook-pages/83.jpeg',
-        'flipbook-pages/84.jpeg',
-        'flipbook-pages/85.jpeg',
+        // 'flipbook-pages/84.jpeg',
+        // 'flipbook-pages/85.jpeg',
         'flipbook-pages/86.jpeg'
       ],
-      pageNum: null
+      pageNum: null,
+      isFlipping: false
     }
   },
 
   methods: {
     onFlipLeftEnd(page) {
       window.location.hash = '#' + page
+      this.isFlipping = false
     },
     onFlipRightEnd(page) {
       window.location.hash = '#' + page
+      this.isFlipping = false
     },
     setPageFromHash() {
       const n = parseInt(window.location.hash.slice(1), 10)
       if (isFinite(n)) this.pageNum = n
+    },
+    pageFlip(flipPageMethod) {
+      if (!this.isFlipping) {
+        flipPageMethod()
+        this.isFlipping = true
+      }
     }
   },
 

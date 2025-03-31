@@ -11,7 +11,7 @@
         </p>
         <div class="contact">
           <p>
-            Contact: ezio@marcelli.com
+            Contact: ezio@marcelli.ca
           </p>
         </div>
       </div>
