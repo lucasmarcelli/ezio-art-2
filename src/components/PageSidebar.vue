@@ -5,7 +5,7 @@
       <h1 class="sidebar-title">ezio marcelli</h1>
 
       <div class="sidebar-content">
-        <img class="ezio-img" src="@/assets/cartoon-face.jpg" alt="this is his face"/>
+        <img class="ezio-portrait" src="@/assets/ezio-marcelli.jpg" alt="this is his face"/>
         <p class="bio">
           Ezio Marcelli was born on February 17, 1954 in Colle- ferro (Rome) Italy. He attended the Liceo Artistico of Frosinone followed by the Academy of Fine Arts until being awarded a diploma in Painting in 1977. He moved to Canada in 1981 settling in Edmonton where he lived for 20 years working as a furniture draftsman. In 2002 he moved to Toronto, where he still lives, continuing his work as a furniture draftsman until 2019. After 42 years he took up painting once more; completing two canvases, Never Forgotten and Sadness, that he had brought unfinished from Italy. This marked the start of his producing newly inspired paintings which continues to this day.
         </p>
@@ -82,8 +82,8 @@ export default {
   }
 }
 
-.ezio-img {
-  height: 4rem;
+.ezio-portrait {
+  height: 10rem;
   float: left;
   margin-right: 1rem;
   object-fit: contain;
