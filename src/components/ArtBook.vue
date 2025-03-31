@@ -128,8 +128,8 @@ export default {
         'flipbook-pages/81.jpeg',
         'flipbook-pages/82.jpeg',
         'flipbook-pages/83.jpeg',
-        'flipbook-pages/84.jpeg',
-        'flipbook-pages/85.jpeg',
+        // 'flipbook-pages/84.jpeg',
+        // 'flipbook-pages/85.jpeg',
         'flipbook-pages/86.jpeg'
       ],
       pageNum: null,
