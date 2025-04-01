@@ -1,17 +1,17 @@
 <template>
-  <div class="page-content">
+  <div class="page-right">
     <slot />
 </div>
 </template>
 
 <script>
 export default {
-  name: "PageContent"
+  name: "PageRight"
 }
 </script>
 
 <style lang="scss" scoped>
-.page-content {
+.page-right {
   display: flex;
   justify-content: flex-end;
   align-items: center;

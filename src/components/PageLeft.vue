@@ -1,10 +1,10 @@
 <template>
-  <div class="sidebar">
+  <div class="left">
 
-    <div class="sidebar-container">
-      <h1 class="sidebar-title">ezio marcelli</h1>
+    <div class="container">
+      <h1 class="left-title">ezio marcelli</h1>
 
-      <div class="sidebar-content">
+      <div class="content">
         <img class="ezio-portrait" src="@/assets/ezio-marcelli.jpg" alt="this is his face"/>
         <p class="bio">
           Ezio Marcelli was born on February 17, 1954 in Colle- ferro (Rome) Italy. He attended the Liceo Artistico of Frosinone followed by the Academy of Fine Arts until being awarded a diploma in Painting in 1977. He moved to Canada in 1981 settling in Edmonton where he lived for 20 years working as a furniture draftsman. In 2002 he moved to Toronto, where he still lives, continuing his work as a furniture draftsman until 2019. After 42 years he took up painting once more; completing two canvases, Never Forgotten and Sadness, that he had brought unfinished from Italy. This marked the start of his producing newly inspired paintings which continues to this day.
@@ -26,7 +26,7 @@
 // import BackgroundRibbon from './BackgroundRibbon'
 
 export default {
-  name: 'PageSidebar',
+  name: 'PageLeft',
 
   // components: {
   //   BackgroundRibbon
@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.sidebar {
+.left {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -50,7 +50,7 @@ export default {
   }
 }
 
-.sidebar-container {
+.container {
   z-index: 10;
   @include tablet {
     padding: 1rem 9rem 3rem 1rem;
@@ -60,7 +60,7 @@ export default {
   }
 }
 
-.sidebar-title {
+.left-title {
   margin: 2rem 0;
   @include siteTitle;
   @include browserLarge {
@@ -74,7 +74,7 @@ export default {
   }
 }
 
-.sidebar-content {
+.content {
   @include tablet {
   }
   @include mobile {

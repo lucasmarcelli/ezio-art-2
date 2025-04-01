@@ -1,12 +1,11 @@
 <template>
   <div id="app">
 
-    <PageSidebar />
-    <!-- <BackgroundRibbon /> -->
+    <PageLeft />
 
-    <PageContent>
+    <PageRight>
       <ArtBook />
-    </PageContent>
+    </PageRight>
 
     <h1 class="title">
       ezio marcelli
@@ -16,8 +15,8 @@
 </template>
 
 <script>
-import PageSidebar from './components/PageSidebar'
-import PageContent from './components/PageContent'
+import PageLeft from './components/PageLeft'
+import PageRight from './components/PageRight'
 import ArtBook from './components/ArtBook'
 // import BackgroundRibbon from '@/components/BackgroundRibbon'
 
@@ -25,8 +24,8 @@ export default {
   name: 'App',
 
   components: {
-    PageSidebar,
-    PageContent,
+    PageLeft,
+    PageRight,
     ArtBook
     // BackgroundRibbon
   }
@@ -38,7 +37,8 @@ export default {
 
 #app {
   position: relative;
-  padding: 2.5rem 3rem 0 9rem;
+  padding: 1rem 3rem 0 9rem;
+  padding-top: 1rem;
   display: flex;
   height: calc(100vh - 2.5rem);
   @include browser {
