@@ -17,20 +17,20 @@
       </div>
     </div>
 
-    <BackgroundRibbon />
+    <!-- <BackgroundRibbon /> -->
 
   </div>
 </template>
 
 <script>
-import BackgroundRibbon from './BackgroundRibbon'
+// import BackgroundRibbon from './BackgroundRibbon'
 
 export default {
   name: 'PageSidebar',
 
-  components: {
-    BackgroundRibbon
-  }
+  // components: {
+  //   BackgroundRibbon
+  // }
 }
 </script>
 
