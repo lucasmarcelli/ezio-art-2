@@ -7,14 +7,14 @@
 
       <div class="bio-wrapper">
         <img class="ezio-portrait" src="@/assets/ezio-marcelli.jpg" alt="this is his face"/>
-        <p class="bio" v-html="bio" />
+        <MarkdownParser class="bio" :markdown="bio" />
         <div class="contact">
           <p v-html="contact" />
         </div>
       </div>
 
       <div class="essay">
-        <p v-html="essay" />
+        <MarkdownParser class="essay" :markdown="essay" />
         <p class="editor" v-html="editor" />
       </div>
 
@@ -25,17 +25,23 @@
 
 <script>
 import copy from '../content/index.json'
+import MarkdownParser from './MarkdownParser.vue';
 
 export default {
   name: 'PageLeft',
 
+  components: {
+    MarkdownParser
+  },
+
   computed: {
-    bio: () => copy.bio,
-    contact: () => copy.contact,
-    essay: () => copy.essay.en,
-    editor: () => copy.essay.editor
+    bio () { return copy.bio},
+    contact () { return copy.contact },
+    essay () { return copy.essay.en },
+    editor () { return copy.essay.editor }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>
