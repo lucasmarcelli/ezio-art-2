@@ -1,5 +1,5 @@
 <template>
-  <div class="page-right">
+  <div class="right">
     <slot />
 </div>
 </template>
@@ -11,11 +11,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-right {
+.right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 65%;
+  width: calc(60% - 2rem);
   position: relative;
   @include tablet {
     width: 100%;

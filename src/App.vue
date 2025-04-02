@@ -37,10 +37,10 @@ export default {
 
 #app {
   position: relative;
-  padding: 1rem 3rem 0 9rem;
-  padding-top: 1rem;
+  padding: 0 3rem 0 5rem;
   display: flex;
-  height: calc(100vh - 2.5rem);
+  // height: calc(100vh - 2.5rem);
+  height: 100vh;
   @include browser {
     padding-left: 3rem;
   }

@@ -1,36 +1,40 @@
 <template>
   <div class="left">
 
-    <div class="container">
-      <h1 class="left-title">ezio marcelli</h1>
+    <h1 class="left-title">ezio marcelli</h1>
 
-      <div class="content">
+    <div class="content">
+
+      <div class="bio-wrapper">
         <img class="ezio-portrait" src="@/assets/ezio-marcelli.jpg" alt="this is his face"/>
-        <p class="bio">
-          Ezio Marcelli was born on February 17, 1954 in Colle- ferro (Rome) Italy. He attended the Liceo Artistico of Frosinone followed by the Academy of Fine Arts until being awarded a diploma in Painting in 1977. He moved to Canada in 1981 settling in Edmonton where he lived for 20 years working as a furniture draftsman. In 2002 he moved to Toronto, where he still lives, continuing his work as a furniture draftsman until 2019. After 42 years he took up painting once more; completing two canvases, Never Forgotten and Sadness, that he had brought unfinished from Italy. This marked the start of his producing newly inspired paintings which continues to this day.
-        </p>
+        <p class="bio" v-html="bio" />
         <div class="contact">
-          <p>
-            Contact: ezio@marcelli.ca
-          </p>
+          <p v-html="contact" />
         </div>
       </div>
-    </div>
 
-    <!-- <BackgroundRibbon /> -->
+      <div class="essay">
+        <p v-html="essay" />
+        <p class="editor" v-html="editor" />
+      </div>
+
+    </div>
 
   </div>
 </template>
 
 <script>
-// import BackgroundRibbon from './BackgroundRibbon'
+import copy from '../content/index.json'
 
 export default {
   name: 'PageLeft',
 
-  // components: {
-  //   BackgroundRibbon
-  // }
+  computed: {
+    bio: () => copy.bio,
+    contact: () => copy.contact,
+    essay: () => copy.essay.en,
+    editor: () => copy.essay.editor
+  }
 }
 </script>
 
@@ -40,7 +44,8 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  width: 35%;
+  width: calc(42% + 2rem);
+  margin-right: 2rem;
   @include tablet {
     position: relative;
     width: 100%;
@@ -50,8 +55,11 @@ export default {
   }
 }
 
-.container {
+.content {
   z-index: 10;
+  padding-right: 2rem;
+  // height: 100%;
+  overflow-y: auto;
   @include tablet {
     padding: 1rem 9rem 3rem 1rem;
   }
@@ -61,7 +69,9 @@ export default {
 }
 
 .left-title {
-  margin: 2rem 0;
+  margin: 2rem 0 0;
+  padding-bottom: 2rem;
+  background-image: linear-gradient($light 50%, transparent 90%);
   @include siteTitle;
   @include browserLarge {
     margin: 3rem 0;
@@ -74,7 +84,7 @@ export default {
   }
 }
 
-.content {
+.bio-wrapper {
   @include tablet {
   }
   @include mobile {
@@ -102,6 +112,14 @@ export default {
 
 .contact {
   font-size: 1rem;
+}
+
+.essay {
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+}
+
+.editor {
+  text-align: right;
 }
 
 </style>
