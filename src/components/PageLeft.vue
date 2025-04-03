@@ -12,7 +12,14 @@
       <div
         :class="['tab-foreward', { selected: tabSelected === 'foreward' }]"
         @click="() => tabSelected = 'foreward'">
-        Rememberances of the Future – Foreward
+        Foreward
+      </div>
+      <div
+        class="language-toggle"
+        @click="toggleLanguage">
+        <span>EN</span>
+        <span>IT</span>
+        <div :class="['toggle', { en: language === 'en'}, { it: language === 'it'}]" />
       </div>
     </div>
 
@@ -49,15 +56,32 @@ export default {
 
   data() {
     return {
-      tabSelected: 'about'
+      tabSelected: 'about',
+      language: 'en'
     }
   },
 
   computed: {
     bio () { return copy.bio},
     contact () { return copy.contact },
-    foreward () { return copy.foreward.en },
+    foreward () { return copy.foreward[this.language] },
     editor () { return copy.foreward.editor }
+  },
+
+  methods: {
+    toggleLanguage() {
+      switch(this.language) {
+        case 'en':
+          this.language = 'it'
+          break
+        case 'it':
+          this.language = 'en'
+          break
+        default:
+          this.language = 'en'
+      }
+      if (this.tabSelected !== 'foreward') { this.tabSelected = 'foreward'}
+    }
   }
 }
 
@@ -138,14 +162,18 @@ export default {
   }
 }
 
-[class|=tab] {
+[class|=tab],
+.language-toggle {
   z-index: 2;
   padding: 0.5rem 1rem;
-  background-color: rgba($yellow, .9);
   border-radius: 0.25rem;
+  color: $light;
   font-size: clamp(0.75rem, 1.3vw, 1rem);
   font-weight: 600;
-  color: $light;
+}
+
+[class|=tab] {
+  background-color: rgba($yellow, .9);
   transition: 150ms ease-in-out;
   &:not(:last-child) {
     margin-right: 0.5rem;
@@ -159,6 +187,47 @@ export default {
   }
   @include tablet {
     font-size: clamp(0.75rem, 1.5vw, 1rem);
+  }
+}
+
+.tab-foreward {
+  &:hover {
+    + .language-toggle {
+      opacity: 1;
+      transition: 150ms ease-in-out;
+    }
+  }
+}
+
+.language-toggle {
+  opacity: 0;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba($blue, .9);
+  transition: 150ms ease-in-out;
+  span:not(:last-of-type) {
+    margin-right: 0.75rem;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
+.toggle {
+  z-index: 10;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.3rem;
+  height: calc(100% - 8px);
+  width: calc(50% - 0.5rem);
+  border-radius: 0.1875rem;
+  background-color: rgba($blue-dark, 0.9);
+  &.en {
+    transform: translateX(0);
+    transition: 150ms ease-in-out;
+  }
+  &.it {
+    transition: 150ms ease-in-out;
+    transform: translateX(calc(-100% - 0.3rem));
   }
 }
 

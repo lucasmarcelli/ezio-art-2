@@ -21,8 +21,18 @@ export default {
 
   data() {
     return {
-      parsed: null,
       processor: null
+    }
+  },
+
+  computed: {
+    parsed() {
+      let text = ''
+      this.processor.process(this.markdown, (err, file) => {
+        if (err) { console.log('error during parsing ', err) }
+        if (file) { text = file.value}
+      })
+      return text
     }
   },
 
@@ -31,13 +41,8 @@ export default {
       .use(remarkParse)
       .use(remarkRehype)
       .use(rehypeStringify)
+    },
 
-    this.processor.process(this.markdown, (err, file) => {
-      if (err) { console.log('error during parsing ', err) }
-      if (file) { this.parsed = file }
-    })
-
-  }
 }
 
 </script>
