@@ -3,9 +3,22 @@
 
     <h1 class="left-title">ezio marcelli</h1>
 
+    <div class="tabs">
+      <div
+        :class="['tab-about', { selected: tabSelected === 'about' }]"
+        @click="() => tabSelected = 'about'">
+        About
+      </div>
+      <div
+        :class="['tab-foreward', { selected: tabSelected === 'foreward' }]"
+        @click="() => tabSelected = 'foreward'">
+        Rememberances of the Future – Foreward
+      </div>
+    </div>
+
     <div class="content">
 
-      <div class="bio-wrapper">
+      <div :class="['about-wrapper', { selected: tabSelected === 'about' }]">
         <img class="ezio-portrait" src="@/assets/ezio-marcelli.jpg" alt="this is his face"/>
         <MarkdownParser class="bio" :markdown="bio" />
         <div class="contact">
@@ -13,9 +26,9 @@
         </div>
       </div>
 
-      <div class="essay">
-        <MarkdownParser class="essay" :markdown="essay" />
-        <p class="editor" v-html="editor" />
+      <div :class="['foreward-wrapper', { selected: tabSelected === 'foreward' }]">
+        <MarkdownParser class="foreward" :markdown="foreward" />
+        <p class="foreward editor" v-html="editor" />
       </div>
 
     </div>
@@ -34,18 +47,23 @@ export default {
     MarkdownParser
   },
 
+  data() {
+    return {
+      tabSelected: 'foreward'
+    }
+  },
+
   computed: {
     bio () { return copy.bio},
     contact () { return copy.contact },
-    essay () { return copy.essay.en },
-    editor () { return copy.essay.editor }
+    foreward () { return copy.foreward.en },
+    editor () { return copy.foreward.editor }
   }
 }
 
 </script>
 
 <style lang="scss" scoped>
-
 .left {
   display: flex;
   flex-flow: column nowrap;
@@ -64,8 +82,11 @@ export default {
 .content {
   z-index: 10;
   padding-right: 2rem;
-  // height: 100%;
   overflow-y: auto;
+  @include scrollbars(10px, transparent, transparent);
+  &:hover {
+    @include scrollbars(10px, $green, $light);
+  }
   @include tablet {
     padding: 1rem 9rem 3rem 1rem;
   }
@@ -90,7 +111,34 @@ export default {
   }
 }
 
-.bio-wrapper {
+.tabs {
+  display: flex;
+}
+
+[class|=tab] {
+  padding: 0.5rem 1rem;
+  background-color: rgba($yellow, .9);
+  border-radius: 0.25rem;
+  font-weight: 600;
+  color: $light;
+  transition: 150ms ease-in-out;
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+  &:hover {
+    background-color: rgba($blue, .9);
+    cursor: pointer;
+  }
+  &.selected {
+    background-color: rgba($green, .9);
+  }
+}
+
+.about-wrapper {
+  display: none;
+  &.selected {
+    display: block;
+  }
   @include tablet {
   }
   @include mobile {
@@ -120,7 +168,14 @@ export default {
   font-size: 1rem;
 }
 
-.essay {
+.foreward-wrapper {
+  display: none;
+  &.selected {
+    display: block;
+  }
+}
+
+.foreward {
   font-size: clamp(1rem, 1.4vw, 1.3rem);
 }
 

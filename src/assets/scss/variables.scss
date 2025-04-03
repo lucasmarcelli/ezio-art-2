@@ -35,6 +35,7 @@ $tablet: 850px;
 $browser: 1024px;
 $browserMed: 1250px;
 $browserLarge: 1360px;
+
 @mixin mobile { @media screen and (max-width: $mobile) { @content; } }
 @mixin tablet { @media screen and (max-width: $tablet) { @content; } }
 @mixin browser { @media screen and (max-width: $browser) { @content; } }
@@ -45,4 +46,25 @@ $browserLarge: 1360px;
   font-family: 'Unbounded';
   font-size: 3.5rem;
   font-size: clamp(3rem, 1vh, 4rem);
+}
+
+@mixin scrollbars(
+  $size: 10px,
+  $thumb-color: $dark,
+  $background-color: $light
+) {
+  // Chrome & Safari
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $thumb-color;
+  }
+  &::-webkit-scrollbar-track {
+    display: none;
+  }
+  transition: scrollbar-color 500ms;
+  scrollbar-color: $thumb-color $background-color;
 }
