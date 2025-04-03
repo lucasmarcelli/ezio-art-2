@@ -1,28 +1,28 @@
 <template>
-  <div class="page-content">
+  <div class="right">
     <slot />
 </div>
 </template>
 
 <script>
 export default {
-  name: "PageContent"
+  name: "PageRight"
 }
 </script>
 
 <style lang="scss" scoped>
-.page-content {
+.right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 65%;
+  width: calc(60% - 2rem);
   position: relative;
   @include tablet {
     width: 100%;
   }
   @include mobile {
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 

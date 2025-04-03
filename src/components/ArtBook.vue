@@ -41,7 +41,7 @@ export default {
     Flipbook
   },
 
-  data () {
+  data() {
     return {
       pages: [
         null,
@@ -49,21 +49,21 @@ export default {
         // 'flipbook-pages/2.jpeg',
         // 'flipbook-pages/3.jpeg',
         // 'flipbook-pages/4.jpeg',
-        'flipbook-pages/5.jpeg',
+        // 'flipbook-pages/5.jpeg',
         // 'flipbook-pages/6.jpeg',
-        'flipbook-pages/7.jpeg',
+        // 'flipbook-pages/7.jpeg',
         // 'flipbook-pages/8.jpeg',
-        'flipbook-pages/9.jpeg',
-        'flipbook-pages/10.jpeg',
-        'flipbook-pages/11.jpeg',
-        'flipbook-pages/12.jpeg',
-        'flipbook-pages/13.jpeg',
+        // 'flipbook-pages/9.jpeg',
+        // 'flipbook-pages/10.jpeg',
+        // 'flipbook-pages/11.jpeg',
+        // 'flipbook-pages/12.jpeg',
+        // 'flipbook-pages/13.jpeg',
         // 'flipbook-pages/14.jpeg',
-        'flipbook-pages/15.jpeg',
-        'flipbook-pages/16.jpeg',
-        'flipbook-pages/17.jpeg',
-        'flipbook-pages/18.jpeg',
-        'flipbook-pages/19.jpeg',
+        // 'flipbook-pages/15.jpeg',
+        // 'flipbook-pages/16.jpeg',
+        // 'flipbook-pages/17.jpeg',
+        // 'flipbook-pages/18.jpeg',
+        // 'flipbook-pages/19.jpeg',
         // 'flipbook-pages/20.jpeg',
         // 'flipbook-pages/21.jpeg',
         'flipbook-pages/22.jpeg',
@@ -130,7 +130,7 @@ export default {
         'flipbook-pages/83.jpeg',
         // 'flipbook-pages/84.jpeg',
         // 'flipbook-pages/85.jpeg',
-        'flipbook-pages/86.jpeg'
+        // 'flipbook-pages/86.jpeg'
       ],
       pageNum: null,
       isFlipping: false
@@ -177,7 +177,7 @@ export default {
 
 <style lang="scss" scoped>
 .art-book {
-  width: 95%;
+  width: 100%;
   height: 90vh;
   @include browser {
     height: 75vh;
