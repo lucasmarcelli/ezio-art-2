@@ -18,7 +18,6 @@
 import PageLeft from './components/PageLeft'
 import PageRight from './components/PageRight'
 import ArtBook from './components/ArtBook'
-// import BackgroundRibbon from '@/components/BackgroundRibbon'
 
 export default {
   name: 'App',
@@ -27,7 +26,6 @@ export default {
     PageLeft,
     PageRight,
     ArtBook
-    // BackgroundRibbon
   }
 }
 </script>
@@ -39,7 +37,6 @@ export default {
   position: relative;
   padding: 0 3rem 0 5rem;
   display: flex;
-  // height: calc(100vh - 2.5rem);
   height: 100vh;
   @include browser {
     padding-left: 3rem;
@@ -63,6 +60,9 @@ export default {
     display: block;
     @include siteTitle;
     text-align: center;
+  }
+  @include mobile {
+    margin-bottom: 1.5rem;
   }
 }
 

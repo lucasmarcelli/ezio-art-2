@@ -81,7 +81,6 @@ export default {
 
 .content {
   position: relative;
-  // z-index: 10;
   padding-top: 2rem;
   padding-right: 2rem;
   overflow-y: auto;
@@ -93,9 +92,6 @@ export default {
     }
   }
   @include tablet {
-    padding: 1rem 9rem 3rem 1rem;
-  }
-  @include mobile {
     padding: 0 1rem;
   }
 }
@@ -125,7 +121,20 @@ export default {
     left: 0;
     width: 100%;
     height: calc(100% + 3rem);
-    background-image: linear-gradient($light 50%, transparent 90%);
+    background-image: linear-gradient($light 60%, transparent 90%);
+  }
+  @include browser {
+    padding-bottom: 1rem;
+    &::after {
+      height: calc(100% + 2rem);
+    }
+  }
+  @include tablet {
+    justify-content: center;
+    padding-bottom: 1.5rem;
+    &::after {
+      display: none;
+    }
   }
 }
 
@@ -134,6 +143,7 @@ export default {
   padding: 0.5rem 1rem;
   background-color: rgba($yellow, .9);
   border-radius: 0.25rem;
+  font-size: clamp(0.75rem, 1.3vw, 1rem);
   font-weight: 600;
   color: $light;
   transition: 150ms ease-in-out;
@@ -146,6 +156,9 @@ export default {
   }
   &.selected {
     background-color: rgba($green, .9);
+  }
+  @include tablet {
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
   }
 }
 
