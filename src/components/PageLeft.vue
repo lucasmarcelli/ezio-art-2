@@ -163,12 +163,12 @@ export default {
 
 [class|=tab],
 .language-toggle {
+  font-family: 'sans-serif';
   z-index: 2;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   color: $light;
   font-size: clamp(0.75rem, 1.3vw, 1rem);
-  font-weight: 600;
 }
 
 [class|=tab] {
@@ -217,7 +217,7 @@ export default {
   height: calc(100% - 8px);
   width: calc(50% - 0.5rem);
   border-radius: 0.1875rem;
-  background-color: rgba($blue-dark, 0.9);
+  background-color: $blue-dark;
   &.en {
     transform: translateX(0);
     transition: 150ms ease-in-out;
