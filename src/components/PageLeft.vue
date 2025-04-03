@@ -80,12 +80,17 @@ export default {
 }
 
 .content {
-  z-index: 10;
+  position: relative;
+  // z-index: 10;
+  padding-top: 2rem;
   padding-right: 2rem;
   overflow-y: auto;
   @include scrollbars(10px, transparent, transparent);
   &:hover {
     @include scrollbars(10px, $green, $light);
+    scrollbar {
+      z-index: 10;
+    }
   }
   @include tablet {
     padding: 1rem 9rem 3rem 1rem;
@@ -96,9 +101,7 @@ export default {
 }
 
 .left-title {
-  margin: 2rem 0 0;
-  padding-bottom: 2rem;
-  background-image: linear-gradient($light 50%, transparent 90%);
+  margin: 2rem 0;
   @include siteTitle;
   @include browserLarge {
     margin: 3rem 0;
@@ -112,10 +115,22 @@ export default {
 }
 
 .tabs {
+  z-index: 1;
+  position: relative;
   display: flex;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 3rem);
+    background-image: linear-gradient($light 50%, transparent 90%);
+  }
 }
 
 [class|=tab] {
+  z-index: 2;
   padding: 0.5rem 1rem;
   background-color: rgba($yellow, .9);
   border-radius: 0.25rem;
@@ -134,11 +149,15 @@ export default {
   }
 }
 
-.about-wrapper {
+.about-wrapper,
+.foreward-wrapper {
   display: none;
   &.selected {
     display: block;
+    width: 100%;
   }
+}
+.about-wrapper {
   @include tablet {
   }
   @include mobile {
@@ -166,13 +185,6 @@ export default {
 
 .contact {
   font-size: 1rem;
-}
-
-.foreward-wrapper {
-  display: none;
-  &.selected {
-    display: block;
-  }
 }
 
 .foreward {
