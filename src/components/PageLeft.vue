@@ -49,7 +49,7 @@ export default {
 
   data() {
     return {
-      tabSelected: 'foreward'
+      tabSelected: 'about'
     }
   },
 
