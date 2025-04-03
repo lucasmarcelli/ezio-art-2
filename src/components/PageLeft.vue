@@ -80,7 +80,6 @@ export default {
         default:
           this.language = 'en'
       }
-      if (this.tabSelected !== 'foreward') { this.tabSelected = 'foreward'}
     }
   }
 }
@@ -191,7 +190,7 @@ export default {
 }
 
 .tab-foreward {
-  &:hover {
+  &.selected {
     + .language-toggle {
       opacity: 1;
       transition: 150ms ease-in-out;
@@ -208,10 +207,8 @@ export default {
   span:not(:last-of-type) {
     margin-right: 0.75rem;
   }
-  &:hover {
-    opacity: 1;
-  }
 }
+
 .toggle {
   z-index: 10;
   position: absolute;
