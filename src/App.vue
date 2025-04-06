@@ -3,9 +3,7 @@
 
     <PageLeft />
 
-    <PageRight>
-      <ArtBook />
-    </PageRight>
+    <PageRight />
 
     <h1 class="title">
       ezio marcelli
@@ -17,15 +15,13 @@
 <script>
 import PageLeft from './components/PageLeft'
 import PageRight from './components/PageRight'
-import ArtBook from './components/ArtBook'
 
 export default {
   name: 'App',
 
   components: {
     PageLeft,
-    PageRight,
-    ArtBook
+    PageRight
   }
 }
 </script>
