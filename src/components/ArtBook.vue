@@ -26,6 +26,13 @@
           @click="pageFlip(flipbook.flipRight)">
           <span>→</span>
         </div>
+        <div 
+          v-if="flipbook.page >= flipbook.numPages"
+          @click="goToPage(1)" 
+          class="nav-control next"
+        >
+          <span>→</span>
+        </div>
       </div>
     </FlipBook>
   </div>
@@ -73,6 +80,10 @@ export default {
         flipPageMethod()
         this.isFlipping = true
       }
+    },
+    goToPage(page) {
+      this.pageNum = page
+      this.$refs.flipbook.goToPage(page)
     }
   },
 
