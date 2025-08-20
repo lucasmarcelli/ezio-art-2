@@ -9,6 +9,6 @@ module.exports = defineConfig({
       }
     }
   },
-  publicPath: process.env.NODE_ENV === "production" ? "/ezio-art/" : "/"
+  publicPath: process.env.NODE_ENV === "production" ? "/ezio-art-2/" : "/"
 })
 
