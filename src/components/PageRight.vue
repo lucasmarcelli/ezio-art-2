@@ -154,11 +154,7 @@ export default {
   },
 
   beforeMount() {
-    if (window.innerWidth < 850)  {
-      this.isMobile = true
-    } else {
-      this.isMobile = false
-    }
+    this.isMobile = false;
   }
 }
 </script>
