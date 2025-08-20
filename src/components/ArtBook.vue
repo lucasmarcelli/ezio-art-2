@@ -14,23 +14,15 @@
         <div
           v-if="flipbook.page > 1"
           class="nav-control previous"
-          @click="pageFlip(flipbook.flipLeft)">
+          @click="pageFlipLeft(flipbook.flipLeft)">
           <span>←</span>
         </div>
         <h4 class="text">
           Page {{flipbook.page}} of {{flipbook.numPages}}
         </h4>
         <div
-          v-if="flipbook.page < flipbook.numPages"
           class="nav-control next"
-          @click="pageFlip(flipbook.flipRight)">
-          <span>→</span>
-        </div>
-        <div 
-          v-if="flipbook.page >= flipbook.numPages"
-          @click="goToPage(1)" 
-          class="nav-control next"
-        >
+          @click="pageFlipRight(flipbook.flipRight)">
           <span>→</span>
         </div>
       </div>
@@ -75,10 +67,20 @@ export default {
       const n = parseInt(window.location.hash.slice(1), 10)
       if (isFinite(n)) this.pageNum = n
     },
-    pageFlip(flipPageMethod) {
+    pageFlipLeft(flipPageMethod) {
       if (!this.isFlipping) {
         flipPageMethod()
         this.isFlipping = true
+      }
+    },
+    pageFlipRight(flipPageMethod) {
+      if (!this.isFlipping) {
+        if((this.$parent.isMobile && this.$refs.flipbook.page >= this.$refs.flipbook.numPages) || (!this.$parent.isMobile && this.$refs.flipbook.page >= this.$refs.flipbook.numPages - 1)) {
+          this.goToPage(1)
+        } else {
+          flipPageMethod()
+          this.isFlipping = true
+        }
       }
     },
     goToPage(page) {
