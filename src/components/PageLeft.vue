@@ -12,7 +12,7 @@
       <div
         :class="['tab-foreward', { selected: tabSelected === 'foreward' }]"
         @click="() => tabSelected = 'foreward'">
-        Foreward
+        Foreword
       </div>
       <div
         class="language-toggle"
